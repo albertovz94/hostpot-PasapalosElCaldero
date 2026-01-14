@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>WiFi Pasapalos - Caldero Sur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    $(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post" style="display:none;">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
+    <script type="text/javascript" src="md5.js"></script>
+    <script type="text/javascript">
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+        }
+    </script>
+    $(endif)
+
+    <div class="card">
+        <div class="header">
+            <img src="Caldero-Sur-Wifi.png" alt="Logo Pasapalos" class="logo">
+        </div>
+
+        <div class="content">
+            <p class="login-label">Login</p>
+            
+            <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                <input type="hidden" name="dst" value="$(link-orig)" />
+                <input type="hidden" name="popup" value="true" />
+
+                <div class="input-group">
+                    <img src="usuario.svg" class="input-icon">
+                    <input name="username" type="text" value="$(username)" placeholder="Usuario" required autocomplete="off">
+                </div>
+
+                <div class="input-group">
+                    <img src="candado.svg" class="input-icon">
+                    <input name="password" type="password" placeholder="Password" required autocomplete="off">
+                </div>
+
+                <a href="#" class="forgot-link">Forgot Password?</a>
+
+                <button type="submit" class="btn-login">LOGIN</button>
+            </form>
+            
+                </form> $(if trial == 'yes')
+            <div class="trial-container">
+                <p class="trial-text">¿No tienes clave?</p>
+                <a class="btn-trial" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">
+                    PRUEBA GRATIS AQUÍ
+                </a>
+            </div>
+            $(endif)
+            <div class="error-container">
+                $(if error)
+            <div class="error-container">
+                $(if error)
+                <p id="error-msg-text" class="error-text">$(error)</p>
+                $(endif)
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var error = "$(error)";
+        var errorDiv = document.getElementById("error-msg-text");
+        if (errorDiv) {
+            if (error.indexOf("invalid user or password") !== -1) { 
+                errorDiv.innerHTML = "Usuario o contraseña incorrectos."; 
+            } else if (error.indexOf("stored counters reached") !== -1) { 
+                errorDiv.innerHTML = "Se ha agotado su tiempo o saldo."; 
+            } else if (error.indexOf("no more sessions are allowed") !== -1) { 
+                errorDiv.innerHTML = "Ya tienes una sesión activa."; 
+            }
+        }
+    </script>
+</body>
+</html>

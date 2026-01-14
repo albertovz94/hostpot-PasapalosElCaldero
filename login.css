@@ -1,0 +1,173 @@
+/* Estilos Generales */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Helvetica', Arial, sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('Fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tarjeta Principal */
+.card {
+    width: 350px;
+    background-color: #ffffff;
+    text-align: center;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+/* Cabecera Negra */
+.header {
+    background: #000 url('textura.jpg') repeat;
+    padding: 40px 20px;
+    min-height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    max-width: 85%;
+    height: auto;
+}
+
+/* Cuerpo del Login */
+.content {
+    padding: 30px;
+}
+
+.login-label {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Inputs con Iconos */
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0e0e0;
+    border-radius: 50px;
+    margin-bottom: 15px;
+    padding: 5px 15px;
+}
+
+.input-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    opacity: 0.5;
+}
+ /*user y pass*/ 
+.input-group input {
+    width: 100%;
+    border: none;
+    background: none;
+    text-align: center;       /* Esto hace que el cursor y el texto "Usuario/Password" empiecen en el centro */
+    padding-right: 30px;      /* Ajuste opcional para compensar el espacio del icono a la izquierda */
+    outline: none;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Link de Olvido */
+.forgot-link {
+    display: block;
+    font-size: 12px;
+    color: #e67e22;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Botón Login Naranja */
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    /* Usamos un color sólido o un degradado sutil */
+    background-color: #e67e22; 
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4);
+    transition: all 0.3s ease; /* Transición suave para todo */
+}
+
+/* Efecto al poner el cursor encima */
+.btn-login:hover {
+    background-color: #d35400; /* Naranja más oscuro */
+    transform: translateY(-2px); /* Sube ligeramente */
+    box-shadow: 0 8px 20px rgba(230, 126, 34, 0.6); /* La sombra crece */
+}
+
+/* Efecto al hacer clic */
+.btn-login:active {
+    transform: translateY(0px); /* Vuelve a su sitio al presionar */
+}
+
+/* SECCIÓN PRUEBA GRATIS (TRIAL) */
+.trial-container {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.trial-text {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.btn-trial {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #f1f1f1;
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    text-align: center; /* Asegura que el texto esté centrado */
+    
+    /* Agregamos las mismas transiciones que el de login */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efecto al poner el cursor encima (Igual que el Login) */
+.btn-trial:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px); /* El botón sube */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave gris */
+}
+
+/* Efecto al hacer clic */
+.btn-trial:active {
+    transform: translateY(0px);
+}
+
+/* Contenedor de Alertas */
+.error-container {
+    margin-top: 15px;
+    min-height: 20px;
+}
+
+.error-text {
+    color: #e74c3c;
+    font-size: 13px;
+    font-weight: bold;
+}
