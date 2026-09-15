@@ -12,7 +12,7 @@
 
 <br>
 
-![Vista Previa del Portal Cautivo](LoginRecurso.png)
+![Vista Previa del Portal Cautivo](Caldero-host.png)
 
 </div>
 
