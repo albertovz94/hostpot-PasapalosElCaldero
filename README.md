@@ -10,6 +10,10 @@
 
 *Plantilla moderna, optimizada, completamente responsiva y en español para portales cautivos de **MikroTik RouterOS**, diseñada para la red de clientes de **WiFi Pasapalos - Caldero Sur**.*
 
+<br>
+
+![Vista Previa del Portal Cautivo](LoginRecurso.png)
+
 </div>
 
 ---
