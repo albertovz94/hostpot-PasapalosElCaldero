@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Estado de Conexión - Caldero Sur WiFi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    $(if refresh-timeout)
+    <meta http-equiv="refresh" content="$(refresh-timeout)">
+    $(endif)
+    <link rel="stylesheet" href="login.css">
+    <script language="JavaScript">
+        function openLogout() {
+            if (window.name != 'hotspot_status') return true;
+            open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=350,height=380');
+            window.close();
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <img src="Caldero-Sur-Wifi.png" alt="Logo Pasapalos" class="logo">
+        </div>
+
+        <div class="content">
+            <span class="status-badge">● Conectado a Internet</span>
+            <p class="login-label">Bienvenido, $(username)</p>
+
+            <table class="status-table">
+                <tr>
+                    <td>Dirección IP:</td>
+                    <td>$(ip)</td>
+                </tr>
+                <tr>
+                    <td>Dirección MAC:</td>
+                    <td>$(mac)</td>
+                </tr>
+                <tr>
+                    <td>Tiempo Conectado:</td>
+                    <td>$(uptime)</td>
+                </tr>
+                $(if session-time-left)
+                <tr>
+                    <td>Tiempo Restante:</td>
+                    <td>$(session-time-left)</td>
+                </tr>
+                $(endif)
+                <tr>
+                    <td>Descarga / Subida:</td>
+                    <td>$(bytes-out-nice) / $(bytes-in-nice)</td>
+                </tr>
+                $(if remain-bytes-total-nice)
+                <tr>
+                    <td>Datos Restantes:</td>
+                    <td>$(remain-bytes-total-nice)</td>
+                </tr>
+                $(endif)
+            </table>
+
+            <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+                <button type="submit" class="btn-login">CERRAR SESIÓN</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

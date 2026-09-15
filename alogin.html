@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Conectando... - Caldero Sur WiFi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="2; url=$(link-redirect)">
+    <link rel="stylesheet" href="login.css">
+    <script language="JavaScript">
+        function startRedirect() {
+            $(if popup == 'true')
+            open('$(link-status)', 'hotspot_status', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=350,height=420');
+            $(endif)
+            location.href = '$(link-redirect)';
+        }
+    </script>
+</head>
+<body onLoad="startRedirect()">
+    <div class="card">
+        <div class="header">
+            <img src="Caldero-Sur-Wifi.png" alt="Logo Pasapalos" class="logo">
+        </div>
+
+        <div class="content">
+            <span class="status-badge">● Autenticación Exitosa</span>
+            <p class="login-label">¡Conexión Establecida!</p>
+            <p class="message-box">Has iniciado sesión correctamente. Serás redirigido en unos momentos a tu destino...</p>
+
+            <a href="$(link-redirect)" class="btn-login">CONTINUAR</a>
+        </div>
+    </div>
+</body>
+</html>

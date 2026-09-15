@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Sesión Finalizada - Caldero Sur WiFi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <script language="JavaScript">
+        function openLogin() {
+            if (window.name != 'hotspot_logout') return true;
+            open('$(link-login)', '_blank', '');
+            window.close();
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <img src="Caldero-Sur-Wifi.png" alt="Logo Pasapalos" class="logo">
+        </div>
+
+        <div class="content">
+            <span class="status-badge offline">● Sesión Finalizada</span>
+            <p class="login-label">Hasta pronto, $(username)</p>
+
+            <table class="status-table">
+                <tr>
+                    <td>Dirección IP:</td>
+                    <td>$(ip)</td>
+                </tr>
+                <tr>
+                    <td>Dirección MAC:</td>
+                    <td>$(mac)</td>
+                </tr>
+                <tr>
+                    <td>Tiempo Conectado:</td>
+                    <td>$(uptime)</td>
+                </tr>
+                <tr>
+                    <td>Tráfico Total:</td>
+                    <td>$(bytes-out-nice) / $(bytes-in-nice)</td>
+                </tr>
+            </table>
+
+            <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+                <button type="submit" class="btn-login">CONECTAR DE NUEVO</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -52,8 +52,8 @@
 
                 <button type="submit" class="btn-login">LOGIN</button>
             </form>
-            
-                </form> $(if trial == 'yes')
+
+            $(if trial == 'yes')
             <div class="trial-container">
                 <p class="trial-text">¿No tienes clave?</p>
                 <a class="btn-trial" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">
@@ -61,13 +61,12 @@
                 </a>
             </div>
             $(endif)
+
+            $(if error)
             <div class="error-container">
-                $(if error)
-            <div class="error-container">
-                $(if error)
                 <p id="error-msg-text" class="error-text">$(error)</p>
-                $(endif)
             </div>
+            $(endif)
         </div>
     </div>
 
